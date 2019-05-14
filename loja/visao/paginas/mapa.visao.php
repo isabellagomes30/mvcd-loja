@@ -1,6 +1,6 @@
 <html>
     
     <body>
-        <a href="paginas/sobre">Minha loja</a>
+        <a href="paginas/sobre">Word of books</a>
     </body>
 </html>
