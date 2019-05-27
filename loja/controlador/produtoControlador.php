@@ -18,7 +18,7 @@ function adicionar () {
             $codigo = $_POST["codigo"];
             $valor = $_POST["valor"];
             
-       echo validar_elementos_obrigatorios($nome_do_produto);
+       echo validar_elementos_obrigatorios($nomeproduto);
        echo validar_elementos_especificos($codigo); 
        echo validar_elementos_especificos($valor); 
        

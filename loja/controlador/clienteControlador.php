@@ -1,6 +1,7 @@
 <?php
 
 require("servico/validarServico.php");
+require_once 'modelo/clienteModelo.php';
 
 function cadastro () {
     if (ehPost()){
@@ -22,7 +23,9 @@ function cadastro () {
        echo validar_elementos_especificos($datanasc);
       
        
-            
+    $msg = adicionarCliente($nome, $sobrenome, $email, $senha, $confirmarsenha, $cpf, $datanasc, $sexo);
+    echo $msg;
+    
     print_r($_POST);
     
 }else{
