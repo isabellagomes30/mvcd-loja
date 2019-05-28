@@ -57,5 +57,11 @@ function contato () {
     }
 }
 
+function listarClientes (){
+    $dados= array();
+    $dados["clientes"]= pegarTodosClientes();
+    exibir ("cliente/listar", $dados);
+}
+
 
 

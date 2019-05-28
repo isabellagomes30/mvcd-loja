@@ -5,6 +5,9 @@
         <group>
             <file>file:/C:/wamp64/www/loja/controlador/produtoControlador.php</file>
             <file>file:/C:/wamp64/www/loja/modelo/clienteModelo.php</file>
+            <file>file:/C:/wamp64/www/loja/controlador/clienteControlador.php</file>
+            <file>file:/C:/wamp64/www/loja/servico/validarServico.php</file>
+            <file>file:/C:/wamp64/www/loja/biblioteca/mysqli.php</file>
         </group>
     </open-files>
 </project-private>

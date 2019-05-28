@@ -1,8 +1,12 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+function categoria ($nome){
+    $sql = "INSERT INTO categoria (nome) VALUES ('$nome')";
+    $resultado = mysqli_query($cnx = conn(), $sql);
+    if(!$resultado) { die('Erro ao cadastrar a Categoria' .mysqli_error($cnx));}
+    return 'Categoria cadastrado com sucesso!';
+    
+}
+
+
 
