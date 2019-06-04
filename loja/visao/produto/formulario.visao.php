@@ -5,6 +5,13 @@
         <title></title>
     </head>
     <body>
+        <?php
+        if(ehPost()){
+        foreach ($errors as $erro) {
+            echo "$erro<br>";
+        }
+    }
+?>
         <form action="" method="POST">
         
             Nome: <input type="text" name="nomeproduto"><br>

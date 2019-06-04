@@ -22,20 +22,42 @@ function adicionar () {
             $descricao = $_POST["descricao"];
             $valor = $_POST["valor"];
             $categoria = $_POST["categoria"];
+        
+            $errors= array();
             
-       echo validar_elementos_obrigatorios($nome);
-       echo validar_elementos_especificos($codigo); 
-       echo validar_elementos_obrigatorios($descricao);
-       echo validar_elementos_especificos($valor); 
-       echo validar_elementos_obrigatorios($categoria); 
-       
-    $msg = adicionarProduto($nome, $codigo, $descricao, $valor, $categoria);
-    echo $msg;    
-    
-    print_r($_POST);
-    
-}else{
-    exibir("produto/formulario");
+            if  (validar_elementos_obrigatorios($nome, "nomeproduto") != NULL){
+                $errors[]= validar_elementos_obrigatorios($nome, "nomeproduto");
+            }
+            if  (validar_elementos_especificos($codigo, "codigo") != NULL){
+                $errors[]= validar_elementos_especificos($codigo, "codigo");
+            }
+            if  (validar_elementos_obrigatorios($descricao, "descricao") != NULL){
+                $errors[]= validar_elementos_obrigatorios($descricao,"descricao");
+            }
+            if  (validar_elementos_especificos($valor, "valor") != NULL){
+                $errors[]= validar_elementos_especificos($valor, "valor");
+            }
+            if  (validar_elementos_obrigatorios($categoria, "categoria") != NULL){
+                $errors[]= validar_elementos_obrigatorios($categoria, "categoria");
+            }
+            
+            if (count($errors) > 0){
+                $dados= array();
+                $dados["errors"]= $errors;
+                exibir ("produto/formulario", $dados);
+            } else{
+                 $msg = adicionarProduto($nome, $codigo, $descricao, $valor, $categoria);
+                 echo $msg;    
+                 redirecionar("produto/listarProdutos");
+            }
+            }else{
+                exibir("produto/formulario");
 
     }
+}
+
+function listarProdutos (){
+    $dados= array();
+    $dados["produtos"]= pegarTodosProdutos();
+    exibir ("produto/listar", $dados);
 }

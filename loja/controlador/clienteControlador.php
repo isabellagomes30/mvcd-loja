@@ -14,25 +14,44 @@ function cadastro () {
             $datanasc = $_POST["datanasc"];
             $sexo = $_POST["sexo"];
             
-       echo validar_elementos_obrigatorios($nome);    
-       echo validar_elementos_obrigatorios($sobrenome);     
-       echo validar_email($email);
-       echo validar_elementos_obrigatorios($senha);
-       echo validar_elementos_obrigatorios($confirmarsenha);
-       echo validar_elementos_especificos($cpf);
-       echo validar_elementos_especificos($datanasc);
-      
-       
-    $msg = adicionarCliente($nome, $sobrenome, $email, $senha, $confirmarsenha, $cpf, $datanasc, $sexo);
-    echo $msg;
-    
-    print_r($_POST);
-    
-}else{
-    exibir("cliente/cadastro");
-
-    }
+            $errors= array();
+            
+            if  (validar_elementos_obrigatorios($nome, "nome") != NULL){
+                $errors[]= validar_elementos_obrigatorios($nome, "nome");
+            }
+            if  (validar_elementos_obrigatorios($sobrenome, "sobrenome") != NULL){
+                $errors[]= validar_elementos_obrigatorios($sobrenome, "sobrenome");
+            }
+            if  (validar_email($email, "email") != NULL){
+                $errors[]= validar_email($email, "email");
+            }
+             if  (validar_elementos_obrigatorios($senha, "senha") != NULL){
+                $errors[]= validar_elementos_obrigatorios($senha);
+            }
+            if  (validar_elementos_obrigatorios($confirmarsenha, "confirmarsenha") != NULL){
+                $errors[]= validar_elementos_obrigatorios($confirmarsenha);
+            }
+            if  (validar_elementos_especificos($cpf, "cpf") != NULL){
+                $errors[]= validar_elementos_especificos($cpf, "cpf");
+            }
+            if  (validar_elementos_especificos($datanasc, "datanaasc") != NULL){
+                $errors[]= validar_elementos_especificos($datanasc);
+            }
+            
+            if (count($errors) > 0){
+                $dados= array();
+                $dados["errors"]= $errors;
+                exibir ("cliente/cadastro", $dados);
+            } else{
+               $msg = adicionarCliente($nome, $sobrenome, $email, $senha, $confirmarsenha, $cpf, $datanasc, $sexo);
+               echo $msg;
+              redirecionar("cliente/listarClientes");
+            }
+            }else {
+                exibir ("cliente/cadastro");
+            }
 }
+
 
 function contato () {
     if (ehPost()){
@@ -64,4 +83,7 @@ function listarClientes (){
 }
 
 
-
+function ver ($id){
+    $dados["cliente"]= pegarClientePorId($id);
+    exibir ("cliente/listar", $dados);
+}

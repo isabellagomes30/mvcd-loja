@@ -6,16 +6,29 @@ function adicionarCategoria () {
     if (ehPost()){
         $nome = $_POST["nomeCategoria"];
             
-       echo validar_elementos_obrigatorios($nome);    
+        $errors= array();
+            
+        if  (validar_elementos_obrigatorios($nome, "nomeCategoria") != NULL){
+             $errors[]= validar_elementos_obrigatorios($nome, "nomeCategoria");
+        }    
       
-       
+    if (count($errors) > 0){
+        $dados= array();
+        $dados["errors"]= $errors;
+        exibir ("categoria/formulario", $dados);
+    } else{   
     $msg = categoria($nome);
     echo $msg;
-    
-    print_r($_POST);
-    
+    redirecionar("categoria/listarCategorias");
+    }
 }else{
     exibir("categoria/formulario");
 
     }
+}
+
+function listarCategorias (){
+    $dados= array();
+    $dados["categorias"]= pegarTodasCategorias();
+    exibir ("categoria/listar", $dados);
 }
