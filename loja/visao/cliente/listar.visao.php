@@ -27,6 +27,7 @@
                 <td><?=$cliente['confirmarsenha']?></td>
                 <td><?=$cliente['cpf']?></td>
                 <td><?=$cliente['datanasc']?></td>
+                <td><a href="./cliente/ver/<?=$cliente['idCliente']?>">Ver</a></td>
             </tr>
             <?php endforeach ?>
         </table>

@@ -18,5 +18,15 @@ function pegarTodosProdutos (){
     return $produtos;
 }
 
+function pegarProdutoPorId ($idProduto){
+    $sql= "SELECT * FROM produto where idProduto= $idProduto";
+    $resultado= mysqli_query(conn(), $sql);
+    $produto= mysqli_fetch_assoc($resultado);
+   
+    return $produto;
+}
+
+
+
 
 

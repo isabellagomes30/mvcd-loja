@@ -7,11 +7,10 @@
     <body>
         <h1>Produto</h1>
         Nome: <?=$nome?> <br>
+        Código: <?=$codigo?> <br>
         Descrição: <?=$descricao?> <br>
-        Preço: <?=$preco?> <br>
-        
+        Valor: <?=$valor?> <br>
+        Categoria: <?=$categoria?> <br>
     </body>
 </html>
-
-
 

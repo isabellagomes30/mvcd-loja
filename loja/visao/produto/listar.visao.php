@@ -23,6 +23,7 @@
                 <td><?=$produto['descricao']?></td>
                 <td><?=$produto['valor']?></td>
                 <td><?=$produto['categoria']?></td>
+                 <td><a href="./produto/ver/<?=$produto['idProduto']?>">Ver</a></td>
             </tr>
             <?php endforeach ?>
         </table>

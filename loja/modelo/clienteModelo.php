@@ -18,11 +18,11 @@ function pegarTodosClientes (){
     return $clientes;
 }
 
-function pegarClientePorId ($id){
-    $sql= "SELECT * FROM cliente where id= $id";
+function pegarClientePorId ($idCliente){
+    $sql= "SELECT * FROM cliente where idCliente= $idCliente";
     $resultado= mysqli_query(conn(), $sql);
     $cliente= mysqli_fetch_assoc($resultado);
-    }
+   
     return $cliente;
-
+}
 
