@@ -32,3 +32,14 @@ function listarCategorias (){
     $dados["categorias"]= pegarTodasCategorias();
     exibir ("categoria/listar", $dados);
 }
+
+function ver ($idCategoria){
+    $dados["categoria"]= pegarCategoriaPorId($idCategoria);
+    exibir ("categoria/visualizar", $dados);
+}
+
+function deletar ($idCategoria){
+    $msg = deletarCategoria($idCategoria);
+    redirecionar ("categoria/listarCategorias");
+}
+

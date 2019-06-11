@@ -18,3 +18,20 @@ function pegarTodasCategorias (){
     return $categorias;
 }
 
+function pegarCategoriaPorId ($idCategoria){
+    $sql= "SELECT * FROM categoria where idCategoria= $idCategoria";
+    $resultado= mysqli_query(conn(), $sql);
+    $categoria= mysqli_fetch_assoc($resultado);
+   
+    return $categoria;
+}
+
+function deletarCategoria($idCategoria){
+    $sql= "DELETE FROM categoria WHERE idCategoria = $idCategoria";
+    $resultado = mysqli_query($cnx = conn(), $sql);
+    if(!$resultado){
+        die('Erro ao deletar categoria' . mysqli_error($cnx));
+    }
+    return 'Categoria deletada com sucesso!';
+}
+

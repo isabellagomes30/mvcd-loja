@@ -5,12 +5,16 @@
         <title></title>
     </head>
     <body>
-        <h1>Produto</h1>
-        Nome: <?=$nome?> <br>
-        Código: <?=$codigo?> <br>
-        Descrição: <?=$descricao?> <br>
-        Valor: <?=$valor?> <br>
-        Categoria: <?=$categoria?> <br>
+        
+        <h2>Ver detalhes do produto</h2>
+        
+        <p>Id: <?=$produto['idProduto']?></p>
+        <p>Nome: <?=$produto['nome']?></p>
+        <p>Código:<?=$produto['codigo']?></p>
+        <p>Descrição:<?=$produto['descricao']?></p>
+        <p>Valor: <?=$produto['valor']?></p>
+        <p>Categoria: <?=$produto['categoria']?></p>
+        
     </body>
 </html>
 

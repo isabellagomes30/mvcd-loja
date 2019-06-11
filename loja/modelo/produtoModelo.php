@@ -26,6 +26,15 @@ function pegarProdutoPorId ($idProduto){
     return $produto;
 }
 
+function deletarProduto($idProduto){
+    $sql= "DELETE FROM produto WHERE idProduto = $idProduto";
+    $resultado = mysqli_query($cnx = conn(), $sql);
+    if(!$resultado){
+        die('Erro ao deletar produto' . mysqli_error($cnx));
+    }
+    return 'Produto deletado com sucesso!';
+}
+
 
 
 

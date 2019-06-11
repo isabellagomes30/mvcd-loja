@@ -64,5 +64,10 @@ function listarProdutos (){
 
 function ver ($idProduto){
     $dados["produto"]= pegarProdutoPorId($idProduto);
-    exibir ("produto/listar", $dados);
+    exibir ("produto/visualizar", $dados);
+}
+
+function deletar ($idProduto){
+    $msg = deletarProduto($idProduto);
+    redirecionar ("produto/listarProdutos");
 }
