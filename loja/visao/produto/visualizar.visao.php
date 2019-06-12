@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html> 
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        
-        <h2>Ver detalhes do produto</h2>
-        
-        <p>Id: <?=$produto['idProduto']?></p>
-        <p>Nome: <?=$produto['nome']?></p>
-        <p>Código:<?=$produto['codigo']?></p>
-        <p>Descrição:<?=$produto['descricao']?></p>
-        <p>Valor: <?=$produto['valor']?></p>
-        <p>Categoria: <?=$produto['categoria']?></p>
-        
-    </body>
-</html>
+
+
+<h2>Ver detalhes do produto</h2>
+
+<p>Id Produto: <?= $produto['idproduto'] ?></p>
+<p>Id Categoria: <?= $produto['idcategoria'] ?></p>
+<p>Preço: <?= $produto['preco'] ?></p>
+<p>Nome: <?= $produto['nomeproduto'] ?></p>
+<p>Descrição:<?= $produto['descricao'] ?></p>
+<p>Imagem: <?= $produto['imagem'] ?></p>
+<p>Estoque Mínimo: <?= $produto['estoque_minimo'] ?></p>
+<p>Estoque Máximo: <?= $produto['estoque_maximo'] ?></p>
 

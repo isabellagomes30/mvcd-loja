@@ -5,22 +5,18 @@ require_once 'modelo/clienteModelo.php';
 
 function cadastro () {
     if (ehPost()){
-            $nome = $_POST["nome"];
-            $sobrenome = $_POST["sobrenome"];
+            $nome = $_POST["nomeUsuario"];
             $email = $_POST["email"];
             $senha = $_POST["senha"];
-            $confirmarsenha = $_POST["confirmarsenha"];
             $cpf = $_POST["cpf"];
-            $datanasc = $_POST["datanasc"];
+            $datanasc = $_POST["datadenascimento"];
             $sexo = $_POST["sexo"];
+            $tipousuario = $_POST["tipousuario"];
             
             $errors= array();
             
-            if  (validar_elementos_obrigatorios($nome, "nome") != NULL){
-                $errors[]= validar_elementos_obrigatorios($nome, "nome");
-            }
-            if  (validar_elementos_obrigatorios($sobrenome, "sobrenome") != NULL){
-                $errors[]= validar_elementos_obrigatorios($sobrenome, "sobrenome");
+            if  (validar_elementos_obrigatorios($nome, "nomeUsuario") != NULL){
+                $errors[]= validar_elementos_obrigatorios($nome, "nome usuario");
             }
             if  (validar_email($email, "email") != NULL){
                 $errors[]= validar_email($email, "email");
@@ -28,14 +24,11 @@ function cadastro () {
              if  (validar_elementos_obrigatorios($senha, "senha") != NULL){
                 $errors[]= validar_elementos_obrigatorios($senha);
             }
-            if  (validar_elementos_obrigatorios($confirmarsenha, "confirmarsenha") != NULL){
-                $errors[]= validar_elementos_obrigatorios($confirmarsenha);
-            }
             if  (validar_elementos_especificos($cpf, "cpf") != NULL){
                 $errors[]= validar_elementos_especificos($cpf, "cpf");
             }
-            if  (validar_elementos_especificos($datanasc, "datanaasc") != NULL){
-                $errors[]= validar_elementos_especificos($datanasc);
+            if  (validar_elementos_especificos($datanasc, "datadenascimento") != NULL){
+                $errors[]= validar_elementos_especificos($datanasc,  "data de nascimento");
             }
             
             if (count($errors) > 0){
@@ -43,7 +36,7 @@ function cadastro () {
                 $dados["errors"]= $errors;
                 exibir ("cliente/cadastro", $dados);
             } else{
-               $msg = adicionarCliente($nome, $sobrenome, $email, $senha, $confirmarsenha, $cpf, $datanasc, $sexo);
+               $msg = adicionarCliente($nome, $email, $senha, $cpf, $datanasc, $sexo, $tipousuario);
                echo $msg;
               redirecionar("cliente/listarClientes");
             }

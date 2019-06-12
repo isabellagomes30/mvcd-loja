@@ -1,7 +1,7 @@
 <?php
 
-function adicionarProduto($nome, $codigo, $descricao, $valor, $categoria){
-    $sql = "INSERT INTO produto (nome, codigo, descricao, valor, categoria) VALUES ('$nome', '$codigo', '$descricao', '$valor', '$categoria')";
+function adicionarProduto($preco, $nomeproduto, $descricao, $imagem, $estoque_minimo, $estoque_maximo ){
+    $sql = "INSERT INTO produtos (preco, nomeproduto, descricao, imagem, estoque_minimo, estoque_maximo, idcategoria) VALUES ('$preco', '$nomeproduto', '$descricao', '$imagem', '$estoque_minimo', '$estoque_maximo', 1)";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao cadastrar o produto' .mysqli_error($cnx));}
     return 'Produto cadastrado com sucesso!';
@@ -9,7 +9,7 @@ function adicionarProduto($nome, $codigo, $descricao, $valor, $categoria){
 }
 
 function pegarTodosProdutos (){
-    $sql= "SELECT * FROM produto";
+    $sql= "SELECT * FROM produtos";
     $resultado= mysqli_query(conn(), $sql);
     $produtos= array();
     while ($linha= mysqli_fetch_assoc($resultado)){
@@ -19,7 +19,7 @@ function pegarTodosProdutos (){
 }
 
 function pegarProdutoPorId ($idProduto){
-    $sql= "SELECT * FROM produto where idProduto= $idProduto";
+    $sql= "SELECT * FROM produtos where idProduto= $idProduto";
     $resultado= mysqli_query(conn(), $sql);
     $produto= mysqli_fetch_assoc($resultado);
    
@@ -27,15 +27,13 @@ function pegarProdutoPorId ($idProduto){
 }
 
 function deletarProduto($idProduto){
-    $sql= "DELETE FROM produto WHERE idProduto = $idProduto";
+    $sql= "DELETE FROM produtos WHERE idProduto = $idProduto";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado){
         die('Erro ao deletar produto' . mysqli_error($cnx));
     }
     return 'Produto deletado com sucesso!';
 }
-
-
 
 
 

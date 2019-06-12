@@ -17,36 +17,41 @@ function visualizar () {
 
 function adicionar () {
     if (ehPost()){
-            $nome = $_POST["nomeproduto"];
-            $codigo = $_POST["codigo"];
+
+            $preco = $_POST["preco"];
+            $nomeproduto = $_POST["nomeproduto"];
             $descricao = $_POST["descricao"];
-            $valor = $_POST["valor"];
-            $categoria = $_POST["categoria"];
+            $imagem = $_POST["imagem"];
+            $estoque_minimo = $_POST["estoque_minimo"];
+            $estoque_maximo = $_POST["estoque_maximo"];
         
             $errors= array();
-            
-            if  (validar_elementos_obrigatorios($nome, "nomeproduto") != NULL){
-                $errors[]= validar_elementos_obrigatorios($nome, "nomeproduto");
+            if  (validar_elementos_especificos($preco, "preco") != NULL){
+                $errors[]= validar_elementos_especificos($preco, "preco");
             }
-            if  (validar_elementos_especificos($codigo, "codigo") != NULL){
-                $errors[]= validar_elementos_especificos($codigo, "codigo");
+            if  (validar_elementos_obrigatorios($nomeproduto, "nomeproduto") != NULL){
+                $errors[]= validar_elementos_obrigatorios($nomeproduto, "nomeproduto");
             }
             if  (validar_elementos_obrigatorios($descricao, "descricao") != NULL){
                 $errors[]= validar_elementos_obrigatorios($descricao,"descricao");
             }
-            if  (validar_elementos_especificos($valor, "valor") != NULL){
-                $errors[]= validar_elementos_especificos($valor, "valor");
+            if  (validar_elementos_obrigatorios($imagem, "imagem") != NULL){
+                $errors[]= validar_elementos_obrigatorios($imagem,"imagem");
             }
-            if  (validar_elementos_obrigatorios($categoria, "categoria") != NULL){
-                $errors[]= validar_elementos_obrigatorios($categoria, "categoria");
+            if  (validar_elementos_obrigatorios($estoque_minimo, "estoque_minimo") != NULL){
+                $errors[]= validar_elementos_obrigatorios($estoque_minimo,"estoque_minimo");
             }
+            if  (validar_elementos_obrigatorios($estoque_maximo, "estoque_maximo") != NULL){
+                $errors[]= validar_elementos_obrigatorios($estoque_maximo,"estoque_maximo");
+            }
+            
             
             if (count($errors) > 0){
                 $dados= array();
                 $dados["errors"]= $errors;
                 exibir ("produto/formulario", $dados);
             } else{
-                 $msg = adicionarProduto($nome, $codigo, $descricao, $valor, $categoria);
+                 $msg = adicionarProduto($preco, $nomeproduto, $descricao, $imagem, $estoque_minimo, $estoque_maximo);
                  echo $msg;    
                  redirecionar("produto/listarProdutos");
             }

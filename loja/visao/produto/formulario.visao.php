@@ -12,13 +12,15 @@
         }
     }
 ?>
+        <h2>Cadastro do Produto</h2>
         <form action="" method="POST">
-        
-            Nome: <input type="text" name="nomeproduto"><br>
-            <br>Código: <input type="text" name="codigo"><br>
+          
+            Preço: <input type="text" name="preco"><br>
+            <br>Nome: <input type="text" name="nomeproduto"><br>
             <br>Descrição: <input type="text" name="descricao"><br>
-            <br>Valor: <input type="text" name="valor"><br>
-            <br>Categoria: <input type="text" name="categoria"><br>
+            <br>Imagem: <input type="text" name="imagem"><br>
+            <br>Estoque mínimo : <input type="text" name="estoque_minimo"><br>
+            <br>Estoque máximo: <input type="text" name="estoque_maximo"><br>
             
             <br><button>Enviar</button>
         

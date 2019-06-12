@@ -1,37 +1,31 @@
-<!DOCTYPE html>
+<h2>Listar  Clientes</h2>
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <h2>Listar  Clientes</h2>
-        
-        <table class="table">
-            <thead>
-                <tr>NOME  </tr>
-                <tr> SOBRENOME </tr>
-                <tr> EMAIL </tr>
-                <tr> SENHA </tr>
-                <tr> CONFIRMAR SENHA </tr>
-                <tr> CPF </tr>
-                <tr> DATA DE NASCIMENTO </tr>
-            </thead>
-            <?php foreach ($clientes as $cliente): ?>
+<table class="table" border="1">
+    <thead>
+        <th>NOME</th>
+        <th>EMAIL</th>
+        <th>SENHA</th>
+        <th>CPF</th>
+        <th>DATA DE NASCIMENTO </th>
+        <th>SEXO</th>
+        <th>TIPO USUÁRIO</th>
+        <th>VISUALIZAR</th>
+        <th>DELETAR</th>
+    </thead>
+    <tbody>
+        <?php foreach ($clientes as $cliente): ?>
             <tr>
-                <td><?=$cliente['nome']?></td>
-                <td><?=$cliente['sobrenome']?></td>
-                <td><?=$cliente['email']?></td>
-                <td><?=$cliente['senha']?></td>
-                <td><?=$cliente['confirmarsenha']?></td>
-                <td><?=$cliente['cpf']?></td>
-                <td><?=$cliente['datanasc']?></td>
-                <td><a href="./cliente/ver/<?=$cliente['idCliente']?>">Ver</a></td>
-                <td><a href="./cliente/deletar/<?=$cliente['idCliente']?>">Deletar</a></td>
+                <td><?= $cliente['nomeUsuario'] ?></td>
+                <td><?= $cliente['email'] ?></td>
+                <td><?= $cliente['senha'] ?></td>
+                <td><?= $cliente['cpf'] ?></td>
+                <td><?= $cliente['datadenascimento'] ?></td> 
+                <td><?= $cliente['sexo'] ?></td> 
+                <td><?= $cliente['tipoUsuario'] ?></td> 
+                <td><a href="./cliente/ver/<?= $cliente['idUsuario'] ?>">Ver</a></td>
+                <td><a href="./cliente/deletar/<?= $cliente['idUsuario'] ?>">Deletar</a></td>
             </tr>
-            <?php endforeach ?>
-        </table>
-        <a href="./cliente/cadastro" class="btn btn-primary">Novo Cliente</a>
-    </body>
-</html>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<a href="./cliente/cadastro" class="btn btn-primary">Novo Usuário</a>

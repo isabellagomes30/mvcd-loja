@@ -12,9 +12,10 @@
         }
     }
 ?>
+        <h2>Cadastro de Categoria</h2>
         <form action="" method="POST">
         
-            Nome: <input type="text" name="nomeCategoria"><br>
+            Nome: <input type="text" name="descricao"><br>
             
             
             <br><button>Enviar</button>

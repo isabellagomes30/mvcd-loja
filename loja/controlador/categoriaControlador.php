@@ -4,12 +4,12 @@ require_once 'modelo/categoriaModelo.php';
 
 function adicionarCategoria () {
     if (ehPost()){
-        $nome = $_POST["nomeCategoria"];
+        $nome = $_POST["descricao"];
             
         $errors= array();
             
-        if  (validar_elementos_obrigatorios($nome, "nomeCategoria") != NULL){
-             $errors[]= validar_elementos_obrigatorios($nome, "nomeCategoria");
+        if  (validar_elementos_obrigatorios($nome, "descricao") != NULL){
+             $errors[]= validar_elementos_obrigatorios($nome, "descricao");
         }    
       
     if (count($errors) > 0){

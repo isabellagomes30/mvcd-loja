@@ -8,8 +8,8 @@
         
         <h2>Ver detalhes da categoria</h2>
         
-        <p>Id: <?=$categoria['idCategoria']?></p>
-        <p>Nome: <?=$categoria['nome']?></p>
+        <p>Id: <?=$categoria['idcategoria']?></p>
+        <p>Nome: <?=$categoria['descricao']?></p>
         
         
     </body>

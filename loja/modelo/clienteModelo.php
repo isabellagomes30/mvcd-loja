@@ -1,7 +1,7 @@
 <?php
 
-function adicionarCliente($nome, $sobrenome, $email, $senha, $confirmarsenha, $cpf, $datanasc, $sexo){
-    $sql = "INSERT INTO cliente (nome, sobrenome, email, senha, confirmarsenha, cpf, datanasc, sexo) VALUES ('$nome', '$sobrenome', '$email', '$senha', '$confirmarsenha', '$cpf', '$datanasc', '$sexo')";
+function adicionarCliente($nome, $email, $senha, $cpf, $datanasc, $sexo, $tipousuario){
+    $sql = "INSERT INTO usuario (nomeUsuario, email, senha, cpf, datadenascimento, sexo, tipousuario) VALUES ('$nome', '$email', '$senha', '$cpf', '$datanasc', '$sexo', '$tipousuario')";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao cadastrar cliente' .mysqli_error($cnx));}
     return 'Cliente cadastrado com sucesso!';
@@ -9,7 +9,7 @@ function adicionarCliente($nome, $sobrenome, $email, $senha, $confirmarsenha, $c
 }
 
 function pegarTodosClientes (){
-    $sql= "SELECT * FROM cliente";
+    $sql= "SELECT * FROM usuario";
     $resultado= mysqli_query(conn(), $sql);
     $clientes= array();
     while ($linha= mysqli_fetch_assoc($resultado)){
@@ -18,16 +18,16 @@ function pegarTodosClientes (){
     return $clientes;
 }
 
-function pegarClientePorId ($idCliente){
-    $sql= "SELECT * FROM cliente where idCliente= $idCliente";
+function pegarClientePorId ($idUsuario){
+    $sql= "SELECT * FROM usuario where idUsuario= $idUsuario";
     $resultado= mysqli_query(conn(), $sql);
     $cliente= mysqli_fetch_assoc($resultado);
    
     return $cliente;
 }
 
-function deletarCliente($idCliente){
-    $sql= "DELETE FROM cliente WHERE idCliente = $idCliente";
+function deletarCliente($idUsuario){
+    $sql= "DELETE FROM usuario WHERE idUsuario = $idUsuario";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado){
         die('Erro ao deletar cliente' . mysqli_error($cnx));
