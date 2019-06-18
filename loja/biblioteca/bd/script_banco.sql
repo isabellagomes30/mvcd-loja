@@ -1,5 +1,6 @@
 drop database if exists loja;
 create database loja;
+use database loja;
 
 
 create table usuario (
