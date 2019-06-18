@@ -57,17 +57,6 @@ foreign key(idusuario) references usuario(idusuario) on delete cascade on update
 foreign key(idendereco) references endereco(idendereco) on delete cascade on update cascade
 );
 
-
-
-Create table estoque(
-idestoque int (11) auto_increment  not null,
-idproduto int (11) not null,
-qtde int (11) not null,
-primary key (idestoque),
-foreign key(idproduto) references produtos(idproduto) on delete cascade on update cascade
-);
-
-
 create table produtos (
 idproduto int(11) auto_increment not null,
 idcategoria int  not null,
@@ -82,6 +71,17 @@ foreign key(idcategoria) references categoria(idcategoria)
 );
 
 
+Create table estoque(
+idestoque int (11) auto_increment  not null,
+idproduto int (11) not null,
+qtde int (11) not null,
+primary key (idestoque),
+foreign key(idproduto) references produtos(idproduto) on delete cascade on update cascade
+);
+
+
+
+
 Create table categoria(
 idcategoria int auto_increment  not null,
 descricao varchar (50) not null,
@@ -94,6 +94,6 @@ idproduto int(11) auto_increment not null,
 idpedido int (11)  not null,
 quantidade int(11) not null,
 foreign key(idproduto) references produtos(idproduto) on delete cascade on update cascade,
-foreign key(idpedido) references produtos(idpedido) on delete cascade on update cascade
+foreign key(idpedido) references pedido(idpedido) on delete cascade on update cascade
 );
 
