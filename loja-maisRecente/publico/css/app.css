@@ -1,0 +1,368 @@
+
+body{
+  background-color: #F5F5F5;
+}
+
+#lista{
+  background-color:lightseagreen;
+  height: 120px;
+}
+
+#lista ul{
+    padding-right: 5%;
+    list-style: none;
+    color: #dcced0;
+    width: 90%;
+    height: 30%;
+    padding-top: 3%;
+}
+#lista li{
+  color: white;
+  display:inline;
+  margin-left:2%;
+  margin-right:2%;
+  font-size:30px;
+  margin-top: 0%;
+  width: 60%;
+  height:30%;
+}
+#site{
+  width:100%;
+  height: 100%;
+  padding:100%;
+}
+#logo{
+  height: 150px;
+    width: 350px;
+    float: left;
+}
+#busca{
+  background-color:#E0EEEE;
+  border:solid 2px #5F9EA0;
+  border-radius:10px;
+  width:272px;
+  height:32px;
+  text-align:left;
+  float: right;
+  margin-top:2%;
+  margin-bottom: 2%;
+}
+
+#txtBusca{
+  float:left;
+  background-color:transparent;
+  padding-left:5px; 
+  font-size:18px;
+  border:none;
+  height:32px;
+  width:191px;
+  border-bottom-color: #dcced0;
+}
+
+#btnBusca{
+  border:none;
+  float:left;
+  height:29px;
+  border-radius:0 7px 7px 0;
+  width:77px;
+  font-weight:bold;
+  background-color:#383b43;
+  color: #dcced0;
+}
+
+#divBusca img{
+  float:left;
+}
+#lupa {
+  width:28px;
+  height:28px;
+}
+#rodape{
+  width: 100%;
+  background-color: lightseagreen;
+  height: 450px;
+
+}
+#esquerda{
+  font-size: 14px;
+  float: left;
+  margin-left:16%;
+  color:white;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+#centro{
+  font-size: 14px;
+  float: left;
+  margin-left:10%;
+  margin-right: 10%;
+  color:white;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+#direita{
+  font-size: 14px;
+  float: left;
+  color:white;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+
+.parag-rodape{
+  color: white;
+  font-size: 16px;
+}
+#endereco{
+  margin-left: 6%;
+  clear:both;
+  border:solid;
+  border-width: 3px 0 0 0;
+  margin-right: 5%; 
+  border-color:white; 
+  font-size: 16px;
+}
+#p1{
+  margin-top: 2%;
+  float: left;
+  margin-right: 20px;
+  color:white;
+}
+#facebook{
+  margin-top: 1%;
+  background-color: #39599f;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  float: right;
+  margin-right: 2%;
+  margin-left: 2%;
+}
+#twitter{
+  margin-top: 1%;
+  background-color: #2daae4;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  float: right;
+  margin-right: 2%;
+}
+#googleplus{
+  margin-top: 1%;
+  background-color: #c91e1f;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  float: right;
+  margin-right: 2%;
+}
+
+
+#icones{
+  margin-right: 5%;
+
+}
+#insta{
+  width: 50px;
+  height: 50px;
+  margin-top: 3%;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  float: right;
+  margin-right: 2%;
+}
+.imglivro{
+  width: 27%;
+  margin-left: 15%;
+  display: inline-block;
+  border: 2px;
+  text-align: center;
+  background-color: white;
+  margin-bottom: 5%;
+  border-radius: 4%;
+}
+
+.livros{
+  width: 60%;
+  
+}
+
+.btn{
+  background-color:lightseagreen;
+  color:white;
+  border-radius: 12px;
+  height: 42px;
+  width: 182px;
+  margin-bottom: 5%
+}
+#tom{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#unica{
+  margin-top: 6%;
+  padding-bottom:10%;
+}
+#tamanho{
+  margin-top: 6%;
+  padding-bottom: 10%;
+}
+
+#botao{
+ border-radius: 2%;
+}
+
+.cadastroTitulo{
+    text-align: center; 
+    padding-top: 5%;
+    font-family: 'Dosis', sans-serif;
+    font-size: 40px;
+}
+
+#caixaProduto{
+  width:30%;
+  height: 60%;
+  background-color: white;
+  border-radius: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2%;
+  margin-bottom: 10%;
+  margin-top: 3%;
+}
+
+.campoForm{
+
+margin-bottom: 3%;
+font-family: 'Dosis', sans-serif;
+}
+
+#formProduto{
+    padding-left: 15%;
+    padding-top: 7%;
+}
+
+.btnForm{
+  background-color:lightseagreen;
+  color:white;
+  border-radius: 12px;
+  height: 42px;
+  width: 182px;
+  margin-bottom: 5%;
+  margin-left: 15%;
+}
+
+#caixaCliente{
+  width:30%;
+  height: 90%;
+  background-color: white;
+  border-radius: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2%;
+  margin-bottom: 10%;
+  margin-top: 3%;
+  
+}
+
+#formCliente{
+   padding-left: 15%;
+    padding-top: 7%; 
+}
+
+#caixaCategoria{
+  width:30%;
+  height: 30%;
+  background-color: white;
+  border-radius: 8%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2%;
+  margin-bottom: 10%;
+  margin-top: 3%;
+}
+
+#formCategoria{
+   padding-left: 16%;
+    padding-top: 10%;  
+}
+
+#caixaListarProdutos{
+    padding-left: 18%;
+    margin-bottom: 5%; 
+}
+
+#caixaListarCategorias{
+  margin-left: 38%;
+  margin-bottom: 5%;
+}
+
+#caixaListarClientes{
+   padding-left: 14%;
+   margin-bottom: 5%;  
+}
+
+.btnListar{
+  background-color:lightseagreen;
+  color:white;
+  border-radius: 12px;
+  height: 42px;
+  width: 182px;
+  margin-bottom: 5%;
+  margin-left: 43%;
+}
+
+#visualizarCliente{
+  width:27%;
+  height: 60%;
+  background-color: white;
+  border-radius: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 8%;
+  margin-bottom: 10%;
+  margin-top: 3%;  
+  padding-top: 3%;
+}
+
+#visualizarProduto{
+  width:20%;
+  height: 60%;
+  background-color: white;
+  border-radius: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10%;
+  margin-bottom: 10%;
+  margin-top: 3%;
+  padding-top: 3%;
+}
+#visualizarCategoria{
+  width:15%;
+  height: 30%;
+  background-color: white;
+  border-radius: 8%;
+  margin-left: auto;
+  margin-right: auto;
+ padding-top: 3%;
+  margin-bottom: 10%;
+  margin-top: 3%; 
+  padding-left: 7%;
+}
+
+.btnVoltar{
+  background-color:lightseagreen;
+  color:white;
+  border-radius: 12px;
+  height: 42px;
+  width: 100px;
+  margin-bottom: 5%;
+}
